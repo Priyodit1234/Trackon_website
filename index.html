@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TrackOn</title>
+  <style>
+    /* CSS styling for the page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    
+    form {
+      margin: 0 auto;
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+    
+    input[type="text"], input[type="password"] {
+      display: block;
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    select {
+      display: block;
+      width: 300px;
+      margin: 20px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      margin: 0 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>TrackOn</h1>
+  <form id="login-form">
+    <h2>Login</h2>
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Enter username" required>
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter password" required>
+    <input type="submit" value="Login">
+  </form>
+  
+  <div id="bus-info" style="display:none;">
+    <h2>Select a Bus</h2>
+    <select id="bus-select">
+      <option value="bus1">Bus 1</option>
+      <option value="bus2">Bus 2</option>
+      <option value="bus3">Bus 3</option>
+      <option value="bus4">Bus 4</option>
+      <option value="bus5">Bus 5</option>
+    </select>
+    <button id="get-location-btn">Get Location of Bus</button>
+    <div class="button-container">
+      <button id="back-to-home-btn">Back to Home</button>
+      <button id="sign-out-btn">Sign Out</button>
+    </div>
+  </div>
+  
+  <script>
+    /* JavaScript code for the website */
+    document.querySelector('#login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Code to handle login goes here
+      // Redirect to the page with bus info
+      document.querySelector('#login-form').style.display = 'none';
+      document.querySelector('#bus-info').style.display = 'block';
+    });
+    
+    document.querySelector('#get-location-btn').addEventListener('click', function() {
+      // Code to get the location of the selected bus goes here
+      alert('Location of bus has been requested');
+    });
+  </script>
+</body>
+</html>
